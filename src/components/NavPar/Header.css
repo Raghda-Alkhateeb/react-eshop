@@ -1,0 +1,45 @@
+.header{
+    height: 80px;
+    background-color: black;
+    display: flex;
+    direction: row;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    color: white;
+}
+.header-logo{
+    margin:0px 20px 0px 50px;
+}
+.header_search{
+    height: 40px;
+    padding-top: 5px;
+    flex: 1;
+   
+}
+.header_searchInput{
+    height: 30px;
+    width: 95%;
+ 
+}
+.headerSearchIcon{
+height: 30px !important;
+
+}
+.nav_item{
+    margin-left: 20px;
+}
+.nav_itemLineOne{
+    font-weight: lighter;
+    font-size: xx-small;
+}
+
+.basketIcon{
+    margin-right: 10px;
+    
+}
+.basket_count{
+    margin-right: 50px;
+}
+
