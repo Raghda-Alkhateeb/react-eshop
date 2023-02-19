@@ -1,8 +1,5 @@
-import React from "react";
-import Product from "../../components/home-page/Product";
-import "./home.css";
-function Home() {
-  const ProductInfo = [
+
+  export const ProductInfo = [
     {
       id: 12321341,
       title:
@@ -49,9 +46,8 @@ function Home() {
         "https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg",
     },
     {
-      id: 90829332,
-      title:
-        "Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440",
+      id: 90829332 ,
+      title:"Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440",
       price: 1094.98,
       rating: 4,
       image:
@@ -59,34 +55,3 @@ function Home() {
     },
   ];
 
-  return (
-    <div className="home my-auto">
-      <div className="home-container  my-auto">
-        <img
-          src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg"
-          alt=""
-        />
-      </div>
-      <div className="row  mx-5">
-      
-      {ProductInfo.map((item, index) => {
-        return (
-          <div className="home-row col-12 col-md-6 col-lg-4 g-1 ">
-        <Product
-          id={item.id}
-          title={item.title}
-          price={item.price}
-          rating={item.rating}
-          image={item.image}
-        />
-      </div>
-         
-        );
-      })}
-      </div>
-      
-    </div>
-  );
-}
-
-export default Home;

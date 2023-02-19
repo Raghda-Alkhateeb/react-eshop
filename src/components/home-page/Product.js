@@ -1,16 +1,37 @@
 import React from 'react'
+import { useStateValue } from '../../provider/stateProvider';
 import "./product.css"
-export default function Product() {
+
+export default function Product(props) {
+  const [state, dispatch] = useStateValue();
+
+  const addToBasket = () => {
+      dispatch({
+          type: "ADD_TO_BASKET",
+          item: {
+              id: props.id,
+              image: props.image,
+              title: props.title,
+              price: props.price,
+              rating: props.rating,
+          },
+      });
+  };
   return (
     <div>
-        <div className="product d-flex flex-column align-items-center ">
-            <p className="product-info"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo eum repellat ipsam amet, magni at quibusdam porro voluptate. Eum, dolores.</p>
-            <p className="product-price">30$</p>
-            <div className="product-rating d-flex">⭐⭐⭐</div>
-            <div className="product-img">
-                <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-            </div>
-            <button className='bg-warning'>Add To Basket</button>
+        <div className="product  ">
+            <p className="product-info ">{props.title}</p>
+            <p className="product-price fw-bold text-start"> {Intl.NumberFormat('en-IN',{ style: 'currency', currency: 'USD' }).format(props.price)}</p>
+            <div className="product-rating d-flex text-start"> {Array(props.rating)
+                    .fill()
+                    .map((_, i) => (
+                        <p>⭐</p>
+                    ))}
+                    </div>
+     
+                <img src={props.image} alt="" />
+           
+            <button className='bg-warning' onClick={addToBasket}>Add To Basket</button>
         </div>
     </div>
   )
